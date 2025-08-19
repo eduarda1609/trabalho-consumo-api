@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    background-color:rgb(226, 209, 209);
+    font-size: 20px;
+}
+
+div {
+    border-radius: 30px;
+
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+    margin-top: 45px;
+    margin-left: 20px;
+
+}
+
+h2 {
+    background-color: rgb(255, 253, 253);
+}
+

@@ -1,13 +1,18 @@
 const content = document.getElementById('detail');
 let id = Number(window.location.hash.replace("#", ""))
 
-/**
- * Buscar o personagem especifico e trazer os seguintes dados:
- * nome
- * imagem
- * especie
- * gênero
- * mundo/dimensão
- * status
- * 1 ponto extra pra quem colocar o link para detail la na index
- * **/
+async function getCharacter() {
+  const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+  const character = await response.json();
+
+  content.innerHTML = `
+    <h2>${character.name}</h2>
+    <img src="${character.image}" alt="${character.name}"/>
+    <p><strong>Espécie:</strong> ${character.species}</p>
+    <p><strong>Gênero:</strong> ${character.gender}</p>
+    <p><strong>Mundo/Dimensão:</strong> ${character.origin.name}</p>
+    <p><strong>Status:</strong> ${character.status}</p>
+  `;
+}
+
+getCharacter();
